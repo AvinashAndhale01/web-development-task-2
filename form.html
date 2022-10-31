@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://kit.fontawesome.com/d81f9457ca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1><i class="fa-solid fa-graduation-cap"></i>Student Login</h1>
+  <div class="container">
+
+
+    <form onsubmit=" Addrow()" method="post"><br>
+      <!--username-->
+      <div class="box">
+        <label for="username" class="f1 fontLabel">Username</label>
+        <div class="new iconbox">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+        <div class="un">
+          <input type="text" name="Username" id="fname" value="" placeholder="Username.." class="textbox" autofocus="on" required><br>
+        </div>
+        <div class="clr"></div>
+      </div>
+      <!--username-->
+
+      <!--DOB-->
+      <div class="box">
+        <label for="DOB" class="f1 fontLabel">DOB</label>
+        <div class="new iconbox">
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+        <div class="un">
+          <input type="date" name="DOB" value="DOB" id="DOB" class="textbox" autofocus="on" required><br>
+        </div>
+        <div class="clr"></div>
+      </div>
+      <!--DOB-->
+      <!--Email-->
+
+      <div class="box">
+        <label for="Email ID" class="f1 fontLabel">Email id</label>
+        <div class="new iconbox">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="un">
+          <input type="email" name="email" id="mail" placeholder="Email ID." class="textbox" autofocus="on" required><br>
+        </div>
+        <div class="clr"></div>
+      </div>
+      <!--email-->
+      <!--address-->
+      <div class="box">
+        <label for="Address" class="f1 fontLabel">Address</label>
+        <div class="new iconbox">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="un">
+          <input type="text" name="Address" id="address" placeholder="Address.." class="textbox" autofocus="on" required><br>
+        </div>
+        <div class="clr"></div>
+      </div>
+      <!--address-->
+      <!--department-->
+      <div class="box">
+        <label for="Department" class="f1 fontLabel">Branch:</label>
+        <div class="new iconbox">
+          <i class="fa-solid fa-building-user"></i>
+        </div>
+        <div class="un">
+          <select name="dept" class="textbox " id="dept">
+            <option value="Computer Engineering">Computer Engineering</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Electronics and Telecommunication">Robotics Engineering</option>
+          </select>
+        </div>
+        <div class="clr"></div>
+      </div>
+      <!--epartment-->
+      <!--number-->
+      <div class="box">
+        <label for="number" class="f1 fontLabel">Mobile No:</label>
+        <div class="new iconbox">
+          <i class="fa-solid fa-square-phone"></i>
+        </div>
+        <div class="un">
+          <input type="number" name="number" id="number" placeholder="MOB.." maxlength="10" class="textbox" autofocus="on" required><br>
+        </div>
+        <div class="clr"></div>
+      </div>
+      <!--number-->
+      <!--password-->
+      <div class="box">
+        <label for="password" class="f1 fontLabel">Password:</label>
+        <div class="new iconbox">
+          <i class="fa-solid fa-key"></i>
+        </div>
+        <div class="un">
+          <input type="password" id="pass" name="password" placeholder="password.." class="textbox" autofocus="on" required><br>
+        </div>
+        <div class="clr"></div>
+      </div>
+      <!--password-->
+
+      <!--Gender-->
+      <div class="box radio">
+        <label for="gender" class="fl fontLabel"> Gender: </label>
+        <input id="gen" type="radio" name="Gender" value="Male" required> Male &nbsp; &nbsp; &nbsp; &nbsp;
+        <input id="gen" type="radio" name="Gender" value="Female" required> Female
+      </div>
+      <!--Gender-->
+
+      <div class="box">
+        <input type="button" name="button" onclick="Addrow()" class="button" value="Submit" id="btn">
+
+      </div>
+
+    </form>
+  </div>
+  <div class="container2">
+    <table style="overflow-x:auto;" border="4" id="show">
+      <thead>
+        <tr>
+          <td>Username</td>
+          <td>DOB</td>
+          <td>Email-ID</td>
+          <td>Address</td>
+          <td>Branch</td>
+          <td>Mobile No</td>
+          <td>Gender</td>
+        </tr>
+      </thead>
+  </div>
+  </table>
+
+  </div>
+
+</body>
+<script>
+  var name = [];
+  var name1 = [];
+  var dob = [];
+  var email = [];
+  var add = [];
+  var branch = [];
+  var mob = [];
+  var gender = [];
+  var n = 1;
+  var x = 1;
+
+  function Addrow() {
+    var AddRown = document.getElementById('show');
+    var NewRow = AddRown.insertRow(n);
+
+    name1[x] = document.getElementById('fname').value;
+    dob[x] = document.getElementById('DOB').value;
+    email[x] = document.getElementById('mail').value;
+    add[x] = document.getElementById('address').value;
+    branch[x] = document.getElementById('dept').value;
+    mob[x] = document.getElementById('number').value;
+    gender[x] = document.getElementById('gen').value;
+
+    var cel1 = NewRow.insertCell(0);
+    var cel2 = NewRow.insertCell(1);
+    var cel3 = NewRow.insertCell(2);
+    var cel4 = NewRow.insertCell(3);
+    var cel5 = NewRow.insertCell(4);
+    var cel6 = NewRow.insertCell(5);
+    var cel7 = NewRow.insertCell(6);
+
+    cel1.innerHTML = name1[x];
+    cel2.innerHTML = dob[x];
+    cel3.innerHTML = email[x];
+    cel4.innerHTML = add[x];
+    cel5.innerHTML = branch[x];
+    cel6.innerHTML = mob[x];
+    cel7.innerHTML = gender[x];
+    n++;
+    x++;
+  }
+</script>
+
+</html>
